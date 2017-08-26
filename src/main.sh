@@ -4,4 +4,4 @@ echo "==============="
 
 # standalone installs
 apt-get -y update
-apt-get -y git
+apt-get -y install git
