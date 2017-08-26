@@ -35,8 +35,8 @@ sudo git clone https://github.com/Twinside/vim-hoogle.git
 
 echo "[3/$tot] install haskell stack, add PATH var"
 # stack base
-echo PATH="\$PATH:/root/.local/bin" >> /home/vagrant/.profile
-. /home/vagrant/.profile
+echo PATH="\$PATH:~/.local/bin" >> ~/.profile
+. ~/.profile
 sudo curl -sSL https://get.haskellstack.org/ | sh
 
 # vanilla setup
