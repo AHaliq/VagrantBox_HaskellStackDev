@@ -70,7 +70,7 @@ set fillchars+=vert:│
 
 " Tagbar & Hasktags
 let g:tagbar_type_haskell = {
-    \ 'ctagsbin'  : '/Users/haliq/.local/bin/hasktags',
+    \ 'ctagsbin'  : 'hasktags',
     \ 'ctagsargs' : '-x -c -o-',
     \ 'kinds'     : [
         \  'm:modules:0:1',
