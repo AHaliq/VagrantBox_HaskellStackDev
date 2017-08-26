@@ -36,7 +36,7 @@ map [p    :tabnew<CR>
 
 " Split Navigation
 map ]=    :new<CR>
-map ][    :vnew<CR>
+map ]-    :vnew<CR>
 
 " Open Plugins
 map ,m    :NERDTreeToggle<CR>
