@@ -63,12 +63,10 @@ Vagrant.configure("2") do |config|
   # Enable provisioning with a shell script. Additional provisioners such as
   # Puppet, Chef, Ansible, Salt, and Docker are also available. Please see the
   # documentation for more information about their specific syntax and use.
-  # load main
-  config.vm.provision :shell, path: "./src/main.sh"
-  # load vim setup
-  config.vm.provision :shell, path: "./src/vim/provide.sh"
-  config.vm.provision "file", source: "./src/vim/.vimrc", destination: ".vimrc"
-  # load haskell stack setup
-  config.vm.provision :shell, path: "./src/hsk/provide.sh"
+  # config.vm.provision :shell, path: "" 
+  # send main script
+  config.vm.provision "file", source: "./src/main.sh", destination: "run.sh"
+  # send vim files
+  config.vm.provision "file", source: "./src/.vimrc", destination: ".vimrc"
 
 end
