@@ -27,14 +27,24 @@ set rnu
 set ruler
 
 " Tab Navigation
-map ,,    :tabp<CR>
-map ,.    :tabn<CR>
-map <C-n> :tabnew<CR>
+map [-    :tabp<CR>
+map [=    :tabn<CR>
+map [p    :tabnew<CR>
+
+" Split Navigation
+map ]=    :new<CR>
+map ][    :vnew<CR>
+
+" Open Plugins
 map ,m    :NERDTreeToggle<CR>
 map ,k    :Tagbar<CR>
 map ,l    :Hoogle 
+map ,.    :Magit<CR>
+
+" Close panes
 map .l    :HoogleClose<CR>
-" map ,;    :Errors<CR>
+map ..    :q<CR>
+map .w    :w<CR>:q<CR>
 
 " Theme
 hi Normal ctermbg=none
