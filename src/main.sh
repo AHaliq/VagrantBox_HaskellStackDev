@@ -41,9 +41,11 @@ sudo curl -sSL https://get.haskellstack.org/ | sh
 
 # vanilla setup
 stack setup
-echo "[4/$tot] setup hoogle"
+echo "[4/$tot] setup hoogle, and vim tagbar"
 stack install hoogle
 hoogle data
+stack install hasktags
+sudo apt-get install -yqq exuberant-ctags
 
 # tool dependencies
 echo "[5/$tot] install haskell project tools (pkg-config, cairo, gtk, pango)"
