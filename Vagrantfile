@@ -66,7 +66,5 @@ Vagrant.configure("2") do |config|
   # config.vm.provision :shell, path: "" 
   # send main script
   config.vm.provision "file", source: "./src/main.sh", destination: "run.sh"
-  # send vim files
-  config.vm.provision "file", source: "./src/.vimrc", destination: ".vimrc"
 
 end

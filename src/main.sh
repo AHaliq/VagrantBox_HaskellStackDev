@@ -6,8 +6,10 @@ tot="6"
 
 echo "[0/$tot] start base; apt-get update"
 sudo apt-get -yqq update
-echo "[1/$tot] install git, curl, vim"
+echo "[1/$tot] install git, curl, vim and pull config files"
 sudo apt-get -yqq install curl git vim
+sudo git clone https://github.com/AHaliq/ConfigFiles.git ~/.ConfigFiles
+sudo sh ~/.ConfigFiles/install.sh
 
 # VIM SETUP -------------------------------------
 
