@@ -67,7 +67,12 @@ Vagrant.configure("2") do |config|
   #   apt-get update
   #   apt-get install -y apache2
   # SHELL
+
+  # load main
   config.vm.provision :shell, path: "./src/main.sh"
+  # load vim setup
   config.vm.provision :shell, path: "./src/vim/provide.sh"
   config.vm.provision "file", source: "./src/vim/.vimrc", destination: ".vimrc"
+  # load haskell stack setup
+  config.vm.provision :shell, path: "./src/hsk/provide.sh"
 end
