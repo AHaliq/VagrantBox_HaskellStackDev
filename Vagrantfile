@@ -69,4 +69,5 @@ Vagrant.configure("2") do |config|
   # SHELL
   config.vm.provision :shell, path: "./src/main.sh"
   config.vm.provision :shell, path: "./src/vim/provide.sh"
+  config.vm.provision "file", source: "./src/vim/.vimrc", destination: ".vimrc"
 end
