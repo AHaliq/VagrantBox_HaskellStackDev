@@ -29,6 +29,7 @@ sudo git clone https://github.com/tpope/vim-surround.git
   # Additional UI
 sudo git clone https://github.com/airblade/vim-gitgutter.git
 sudo git clone https://github.com/majutsushi/tagbar.git
+sudo apt-get install -yqq exuberant-ctags
 sudo git clone https://github.com/Twinside/vim-hoogle.git
 
 # HASKELL SETUP ---------------------------------
@@ -38,17 +39,27 @@ echo "[3/$tot] install haskell stack, add PATH var"
 echo PATH="\$PATH:~/.local/bin" >> ~/.profile
 . ~/.profile
 sudo curl -sSL https://get.haskellstack.org/ | sh
+stack setup
 
 # vanilla setup
-stack setup
 echo "[4/$tot] setup hoogle, and vim tagbar"
-stack install hoogle
-hoogle data
-stack install hasktags
-sudo apt-get install -yqq exuberant-ctags
+if [ $# = 0 ] || [ "$1" = "vh" ]
+then
+  stack install hoogle
+  hoogle data
+  stack install hasktags
+else
+  echo " ! skipping vim haskell plugin dependencies"
+fi
 
 # tool dependencies
 echo "[5/$tot] install haskell project tools (pkg-config, cairo, gtk, pango)"
-sudo apt-get -yqq install pkg-config libcairo2-dev gtk2.0 libpango1.0-dev
+
+if [ $# = 0 ]
+then
+  sudo apt-get -yqq install pkg-config libcairo2-dev gtk2.0 libpango1.0-dev
+else
+    echo " ! skipping tools"
+fi
 
 echo "[$tot/$tot FIN]"
