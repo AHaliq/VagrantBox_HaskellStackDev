@@ -31,7 +31,7 @@ sudo git clone https://github.com/airblade/vim-gitgutter.git
 sudo git clone https://github.com/majutsushi/tagbar.git
 sudo apt-get install -yqq exuberant-ctags
 sudo git clone https://github.com/Twinside/vim-hoogle.git
-sudo git clone https://github.com/vim-syntastic/syntastic.git
+sudo git clone --depth=1 https://github.com/vim-syntastic/syntastic.git
 
 # HASKELL SETUP ---------------------------------
 
@@ -43,12 +43,15 @@ sudo curl -sSL https://get.haskellstack.org/ | sh
 stack setup
 
 # vanilla setup
-echo "[4/$tot] setup hoogle, and vim tagbar"
+echo "[4/$tot] setup hoogle, vim tagbar, and syntastic"
 if [ $# = 0 ] || [ "$1" = "vh" ]
 then
   stack install hoogle
   hoogle data
+  hoogle generate
   stack install hasktags
+  stack install hdevtools
+  stack install hlint
 else
   echo " ! skipping vim haskell plugin dependencies"
 fi
