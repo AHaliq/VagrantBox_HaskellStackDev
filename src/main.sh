@@ -33,6 +33,8 @@ cd vim
 make VIMRUNTIMEDIR=/usr/local/share/vim/vim80
 cd ~/vim
 sudo make install
+cd ~
+sudo rm -rf ~/vim
 
 # VIM SETUP -------------------------------------
 
