@@ -31,6 +31,7 @@ sudo git clone https://github.com/airblade/vim-gitgutter.git
 sudo git clone https://github.com/majutsushi/tagbar.git
 sudo apt-get install -yqq exuberant-ctags
 sudo git clone https://github.com/Twinside/vim-hoogle.git
+sudo git clone https://github.com/vim-syntastic/syntastic.git
 
 # HASKELL SETUP ---------------------------------
 
