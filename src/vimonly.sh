@@ -4,6 +4,9 @@ sudo apt-get -yqq install curl git
 sudo git clone https://github.com/AHaliq/ConfigFiles.git ~/.ConfigFiles
 sudo sh ~/.ConfigFiles/install.sh
 
+curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
+      https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+
 cd ~
 git clone https://github.com/vim/vim.git
 cd vim
