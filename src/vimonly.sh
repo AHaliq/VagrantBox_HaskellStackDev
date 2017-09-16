@@ -6,7 +6,7 @@ sudo sh ~/.ConfigFiles/install.sh
 
 curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
       https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-sudo find ~/.vim -type d -exec chmod 755 {} \;
+sudo chmod -R 777 .vim
 
 cd ~
 git clone https://github.com/vim/vim.git
